@@ -16,7 +16,7 @@
 <meta property="og:description" content="ROS中常用的命令行工具学习1、rqt_graph生成节点的关系图 2、rosnode节点相关的查看和操作命令  list ：列出所有节点名 ping：测试节点的连接情况 info：打印节点的信息 machine：显示正运行在一个特定机器上的节点列表或者显示机器的列表 kill：关闭一个运行中的节点 cleanup：清除一个未被调用的节点的信息">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-04-09T11:14:10.000Z">
-<meta property="article:modified_time" content="2021-04-11T02:30:34.130Z">
+<meta property="article:modified_time" content="2021-04-11T07:57:31.338Z">
 <meta property="article:author" content="Hudge Chao">
 <meta property="article:tag" content="ROS">
 <meta name="twitter:card" content="summary">
@@ -197,57 +197,75 @@
         <h1 id="ROS中常用的命令行工具学习"><a href="#ROS中常用的命令行工具学习" class="headerlink" title="ROS中常用的命令行工具学习"></a>ROS中常用的命令行工具学习</h1><h2 id="1、rqt-graph"><a href="#1、rqt-graph" class="headerlink" title="1、rqt_graph"></a>1、rqt_graph</h2><p>生成节点的关系图</p>
 <h2 id="2、rosnode"><a href="#2、rosnode" class="headerlink" title="2、rosnode"></a>2、rosnode</h2><p>节点相关的查看和操作命令</p>
 <ul>
-<li>list ：列出所有节点名</li>
-<li>ping：测试节点的连接情况</li>
-<li>info：打印节点的信息</li>
-<li>machine：显示正运行在一个特定机器上的节点列表或者显示机器的列表</li>
-<li>kill：关闭一个运行中的节点</li>
-<li>cleanup：清除一个未被调用的节点的信息</li>
+<li><code>list</code> ：列出所有节点名</li>
+<li><code>ping</code>：测试节点的连接情况</li>
+<li><code>info</code>：打印节点的信息</li>
+<li><code>machine</code>：显示正运行在一个特定机器上的节点列表或者显示机器的列表</li>
+<li><code>kill</code>：关闭一个运行中的节点</li>
+<li><code>cleanup</code>：清除一个未被调用的节点的信息</li>
 </ul>
 <span id="more"></span>
 
 <h2 id="3、rostopic"><a href="#3、rostopic" class="headerlink" title="3、rostopic"></a>3、rostopic</h2><p>话题相关的查看和操作命令</p>
 <ul>
-<li>list：话题列表 </li>
-<li>bw：显示话题使用的带宽</li>
-<li>echo：打印消息到屏幕</li>
-<li>find：通过类型查找话题</li>
-<li>hz：显示正在发布的话题的频率</li>
-<li>info：打印目标话题的信息</li>
-<li>type：打印话题或者领域的类型</li>
-<li>pub：发布话题数据内容</li>
+<li><code>list</code>：话题列表 </li>
+<li><code>bw</code>：显示话题使用的带宽</li>
+<li><code>echo</code>：打印消息到屏幕</li>
+<li><code>find</code>：通过类型查找话题</li>
+<li><code>hz</code>：显示正在发布的话题的频率</li>
+<li><code>info</code>：打印目标话题的信息</li>
+<li><code>type</code>：打印话题或者领域的类型</li>
+<li><code>pub</code>：发布话题数据内容</li>
 </ul>
 <h2 id="4、rosmsg"><a href="#4、rosmsg" class="headerlink" title="4、rosmsg"></a>4、rosmsg</h2><p>消息相关的指令</p>
 <ul>
-<li>show：显示消息的描述</li>
-<li>info：rosmsg的别名</li>
-<li>list：显示所有消息的列表</li>
-<li>md5：显示消息的md5和</li>
-<li>package：显示一个package中的消息列表</li>
-<li>packages：显示包含相关消息的packages列表</li>
+<li><code>show</code>：显示消息的描述</li>
+<li><code>info</code>：rosmsg的别名</li>
+<li><code>list</code>：显示所有消息的列表</li>
+<li><code>md5</code>：显示消息的md5和</li>
+<li><code>package</code>：显示一个package中的消息列表</li>
+<li><code>packages</code>：显示包含相关消息的packages列表</li>
 </ul>
 <h2 id="5、rosservice"><a href="#5、rosservice" class="headerlink" title="5、rosservice"></a>5、rosservice</h2><p>服务相关的指令</p>
 <ul>
-<li>args：打印服务的参数</li>
-<li>call：调用服务</li>
-<li>find：根据服务类型查找服务</li>
-<li>info：打印服务的信息</li>
-<li>list：列举活动中的服务</li>
-<li>type：打印服务雷系</li>
-<li>uri：打印服务ROSRPC uri</li>
+<li><code>args</code>：打印服务的参数</li>
+<li><code>call</code>：调用服务</li>
+<li><code>find</code>：根据服务类型查找服务</li>
+<li><code>info</code>：打印服务的信息</li>
+<li><code>list</code>：列举活动中的服务</li>
+<li><code>type</code>：打印服务雷系</li>
+<li><code>uri</code>：打印服务<code>ROSRPC uri</code></li>
 </ul>
 <h2 id="6、rosbag"><a href="#6、rosbag" class="headerlink" title="6、rosbag"></a>6、rosbag</h2><p>rosbag是存储ROS消息的一个文件格式，rosbag命令能够记录、复现和操作数据包。</p>
 <ul>
-<li>check：检测在当前系统的一个bag能否显示或者它能否被迁移</li>
-<li>compress：压缩一个或者多个bag files</li>
-<li>decompress：解压缩</li>
-<li>filter：过滤包的内容</li>
-<li>fix：修复bag file中的消息使它能够在当前系统中执行</li>
-<li>info：总结一个或多个包的内容</li>
-<li>play：以时间同步的方式播放一个或多个Bag文件的内容</li>
-<li>record： 记录数据包</li>
-<li>reindex：给包进行重新排序</li>
+<li><code>check</code>：检测在当前系统的一个bag能否显示或者它能否被迁移</li>
+<li><code>compress</code>：压缩一个或者多个bag files</li>
+<li><code>decompress</code>：解压缩</li>
+<li><code>filter</code>：过滤包的内容</li>
+<li><code>fix</code>：修复bag file中的消息使它能够在当前系统中执行</li>
+<li><code>info</code>：总结一个或多个包的内容</li>
+<li><code>play</code>：以时间同步的方式播放一个或多个Bag文件的内容</li>
+<li><code>record</code>： 记录数据包</li>
+<li><code>reindex</code>：给包进行重新排序</li>
 </ul>
+<h2 id="7、创建工作空间"><a href="#7、创建工作空间" class="headerlink" title="7、创建工作空间"></a>7、创建工作空间</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. mkdir catkin_ws</span><br><span class="line">2. <span class="built_in">cd</span> catkin_ws</span><br><span class="line">3. mkdir src</span><br><span class="line">4. <span class="built_in">cd</span> src/</span><br><span class="line">5. catkin_init workspace</span><br></pre></td></tr></table></figure>
+
+<p>编译需要回到工作空间根目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. <span class="built_in">cd</span> ~/catkin_ws</span><br><span class="line">2. catkin_make</span><br></pre></td></tr></table></figure>
+
+<p>安装程序</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">caktin_make install</span><br></pre></td></tr></table></figure>
+
+<h2 id="8、创建功能包"><a href="#8、创建功能包" class="headerlink" title="8、创建功能包"></a>8、创建功能包</h2><p><code>$catkin_create_pkg &lt;package_name&gt; [depend1] [depend2] [depend3]</code></p>
+<p>创建功能包</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/catkin_ws/src</span><br><span class="line">catkin_create_pkg test_pkg std_msgs rospy roscpp</span><br></pre></td></tr></table></figure>
+
+<p>编译功能包</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/catkin_ws</span><br><span class="line">catkin_make</span><br><span class="line"><span class="built_in">source</span> ~/catkin_ws/devel/setup.bash</span><br></pre></td></tr></table></figure>
+
+<p>查看功能包路径</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$ROS_PACKAGE_PATH</span></span><br></pre></td></tr></table></figure>
+
 
       
 
