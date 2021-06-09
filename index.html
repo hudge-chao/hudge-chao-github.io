@@ -173,6 +173,213 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ROS多消息同步回调机制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/06/09/ROS%E5%A4%9A%E6%B6%88%E6%81%AF%E5%90%8C%E6%AD%A5%E5%9B%9E%E8%B0%83%E6%9C%BA%E5%88%B6/">ROS多消息同步回调机制</a>
+    </h1>
+  
+
+        
+        <a href="/2021/06/09/ROS%E5%A4%9A%E6%B6%88%E6%81%AF%E5%90%8C%E6%AD%A5%E5%9B%9E%E8%B0%83%E6%9C%BA%E5%88%B6/" class="archive-article-date">
+  	<time datetime="2021-06-09T08:37:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1、需求起因"><a href="#1、需求起因" class="headerlink" title="1、需求起因"></a>1、需求起因</h2><p><strong>一般情况下，很少需要同步订阅多个话题，只需要订阅单个话题实现逻辑处理即可。但最近需要研究一个端到端的图像信息和控制输出的神经网络的学习，因此需要将三个图像和控制输出进行一个同步回调。所以才有了同步回调的需求，下面是此次需求解决的小笔记。</strong></p>
+<h2 id="2、同步回调机制——Time-Synchronizer"><a href="#2、同步回调机制——Time-Synchronizer" class="headerlink" title="2、同步回调机制——Time Synchronizer"></a>2、同步回调机制——Time Synchronizer</h2><p>Time Synchronizer根据多个传入消息的时间戳进行同步，从而实现调用<strong>同一个回调函数</strong>的目的。下面是ROS wiki的一个例子：</p>
+        
+          <a class="article-more-a" href="/2021/06/09/ROS%E5%A4%9A%E6%B6%88%E6%81%AF%E5%90%8C%E6%AD%A5%E5%9B%9E%E8%B0%83%E6%9C%BA%E5%88%B6/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ROS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Note</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/06/09/ROS%E5%A4%9A%E6%B6%88%E6%81%AF%E5%90%8C%E6%AD%A5%E5%9B%9E%E8%B0%83%E6%9C%BA%E5%88%B6/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Regular-Expression" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/04/28/Regular-Expression/">Regular_Expression</a>
+    </h1>
+  
+
+        
+        <a href="/2021/04/28/Regular-Expression/" class="archive-article-date">
+  	<time datetime="2021-04-28T02:55:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Regular-Expression"><a href="#Regular-Expression" class="headerlink" title="Regular Expression"></a>Regular Expression</h1><h2 id="1、限定符"><a href="#1、限定符" class="headerlink" title="1、限定符"></a>1、限定符</h2><blockquote>
+<ul>
+<li><code>?</code> : 前面字符需要出现0次或者1次</li>
+<li><code>+</code> : 前面这个字符出现1次及以上</li>
+<li><code>*</code> : 前面这个字符可以出现，可以出现一次，也可以出现多次</li>
+<li><code>&#123;&#125;</code> : {}中可以填一个数，如{5}表示前一个字符出现的次数为5；也可以{2，6},表示出现的次数为2~6次，也可以省略6，如{2，}表示为出现2次以上</li>
+</ul>
+</blockquote>
+<h2 id="2、特殊字符"><a href="#2、特殊字符" class="headerlink" title="2、特殊字符"></a>2、特殊字符</h2><table>
+<thead>
+<tr>
+<th align="left">特别字符</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">$</td>
+<td align="left">匹配输入字符串的结尾位置。如果设置了 RegExp 对象的 Multiline 属性，则 $ 也匹配 ‘\n’ 或 ‘\r’。要匹配 $ 字符本身，请使用 $。</td>
+</tr>
+<tr>
+<td align="left">( )</td>
+<td align="left">标记一个子表达式的开始和结束位置。子表达式可以获取供以后使用。要匹配这些字符，请使用 ( 和 )。</td>
+</tr>
+<tr>
+<td align="left">*</td>
+<td align="left">匹配前面的子表达式零次或多次。要匹配 * 字符，请使用 *。</td>
+</tr>
+<tr>
+<td align="left">+</td>
+<td align="left">匹配前面的子表达式一次或多次。要匹配 + 字符，请使用 +。</td>
+</tr>
+<tr>
+<td align="left">.</td>
+<td align="left">匹配除换行符 \n 之外的任何单字符。要匹配 . ，请使用 . 。</td>
+</tr>
+<tr>
+<td align="left">[</td>
+<td align="left">标记一个中括号表达式的开始。要匹配 [，请使用 [。</td>
+</tr>
+<tr>
+<td align="left">?</td>
+<td align="left">匹配前面的子表达式零次或一次，或指明一个非贪婪限定符。要匹配 ? 字符，请使用 ?。</td>
+</tr>
+<tr>
+<td align="left">\</td>
+<td align="left">将下一个字符标记为或特殊字符、或原义字符、或向后引用、或八进制转义符。例如， ‘n’ 匹配字符 ‘n’。’\n’ 匹配换行符。序列 ‘\‘ 匹配 “&quot;，而 ‘(‘ 则匹配 “(“。</td>
+</tr>
+<tr>
+<td align="left">^</td>
+<td align="left">匹配输入字符串的开始位置，除非在方括号表达式中使用，当该符号在方括号表达式中使用时，表示不接受该方括号表达式中的字符集合。要匹配 ^ 字符本身，请使用 ^。</td>
+</tr>
+<tr>
+<td align="left">{</td>
+<td align="left">标记限定符表达式的开始。要匹配 {，请使用 {。</td>
+</tr>
+<tr>
+<td align="left">|</td>
+<td align="left">指明两项之间的一个选择。要匹配 |，请使用 |。</td>
+</tr>
+</tbody></table>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/04/28/Regular-Expression/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-ros-command-tools" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -193,7 +400,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="ROS中常用的命令行工具学习"><a href="#ROS中常用的命令行工具学习" class="headerlink" title="ROS中常用的命令行工具学习"></a>ROS中常用的命令行工具学习</h1><h2 id="1、rqt-graph"><a href="#1、rqt-graph" class="headerlink" title="1、rqt_graph"></a>1、rqt_graph</h2><p>生成节点的关系图</p>
+        <h1 id="ROS中常用的命令行工具学习"><a href="#ROS中常用的命令行工具学习" class="headerlink" title="ROS中常用的命令行工具学习"></a>ROS中常用的命令行工具学习</h1><h2 id="1、Qt-tools"><a href="#1、Qt-tools" class="headerlink" title="1、Qt tools"></a>1、Qt tools</h2><ul>
+<li><code>rqt_console</code>: 日志输出工具</li>
+<li><code>rqt_graph</code>: 计算图可视化工具</li>
+<li><code>rqt_plot</code>: 数据绘图工具</li>
+<li><code>rqt_image_view</code>: 图像渲染工具</li>
+</ul>
 <h2 id="2、rosnode"><a href="#2、rosnode" class="headerlink" title="2、rosnode"></a>2、rosnode</h2><p>节点相关的查看和操作命令</p>
 <ul>
 <li><code>list</code> ：列出所有节点名</li>
@@ -356,7 +568,7 @@
       
         <p><em>这是我第一次建站，本打算使用<code>SSM</code>来建立自己的个人博客，但是苦于找不到好看的个人博客框架，在百度上搜到稚晖君的个人博客，觉得很符合我的审美，然后寻找框架，但是失败了，然后在其知乎上看到他使用了<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">Hexo</a>来实现静态页面blog。然后我用<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">hexo</a>来快速搭建我的blog。以后我还会继续使用<code>SSM</code>搭建我的个人博客，实现动态管理我的博客！</em></p>
 <p><strong>这是我的个人博客。以后我所有的项目都会在这里发布和分享。如果对我的项目中存在疑问，欢迎联系我。</strong></p>
-<p>QQ：<code>987937104</code>,邮箱：<a href="mailto:&#104;&#117;&#x61;&#106;&#x69;&#x65;&#122;&#x40;&#111;&#x75;&#x74;&#108;&#111;&#111;&#107;&#x2e;&#x63;&#x6f;&#x6d;">&#104;&#117;&#x61;&#106;&#x69;&#x65;&#122;&#x40;&#111;&#x75;&#x74;&#108;&#111;&#111;&#107;&#x2e;&#x63;&#x6f;&#x6d;</a></p>
+<p>QQ：<code>987937104</code>,邮箱：<a href="mailto:&#104;&#117;&#x61;&#x6a;&#x69;&#x65;&#x7a;&#x40;&#111;&#x75;&#116;&#x6c;&#x6f;&#x6f;&#x6b;&#46;&#99;&#111;&#x6d;">&#104;&#117;&#x61;&#x6a;&#x69;&#x65;&#x7a;&#x40;&#111;&#x75;&#116;&#x6c;&#x6f;&#x6f;&#x6b;&#46;&#99;&#111;&#x6d;</a></p>
 
       
 
@@ -514,11 +726,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">datastruct</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ROS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">datastruct</a>
+                <a href="javascript:void(0)" class="js-tag color5">Note</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
             
             <div class="clearfix"></div>
