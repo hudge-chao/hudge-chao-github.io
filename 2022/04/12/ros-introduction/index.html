@@ -6,17 +6,29 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2021/3 | Hudeg Chao</title>
+  <title>ros_introduction | Hudeg Chao</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="思考与分享 只因为热爱">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hudeg Chao">
-<meta property="og:url" content="http://example.com/archives/2021/03/index.html">
+  <meta name="description" content="ROS介绍1、什么是ROS？ The Robot Operating System (ROS) is a set of software libraries and tools that help you build robot applications. From drivers to state-of-the-art algorithms, and with powerful develope">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ros_introduction">
+<meta property="og:url" content="http://example.com/2022/04/12/ros-introduction/index.html">
 <meta property="og:site_name" content="Hudeg Chao">
-<meta property="og:description" content="思考与分享 只因为热爱">
+<meta property="og:description" content="ROS介绍1、什么是ROS？ The Robot Operating System (ROS) is a set of software libraries and tools that help you build robot applications. From drivers to state-of-the-art algorithms, and with powerful develope">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="c:/Users/huaji/AppData/Roaming/Typora/typora-user-images/image-20220412151628132.png">
+<meta property="og:image" content="c:/Users/huaji/AppData/Roaming/Typora/typora-user-images/image-20220412152050663.png">
+<meta property="og:image" content="c:/Users/huaji/AppData/Roaming/Typora/typora-user-images/image-20220412152735352.png">
+<meta property="og:image" content="c:/Users/huaji/AppData/Roaming/Typora/typora-user-images/image-20220412152852721.png">
+<meta property="og:image" content="c:/Users/huaji/AppData/Roaming/Typora/typora-user-images/image-20220412153156056.png">
+<meta property="og:image" content="c:/Users/huaji/AppData/Roaming/Typora/typora-user-images/image-20220412154405399.png">
+<meta property="og:image" content="c:/Users/huaji/AppData/Roaming/Typora/typora-user-images/image-20220412154508497.png">
+<meta property="og:image" content="c:/Users/huaji/AppData/Roaming/Typora/typora-user-images/image-20220412154634058.png">
+<meta property="article:published_time" content="2022-04-12T03:04:00.000Z">
+<meta property="article:modified_time" content="2022-04-12T07:47:15.978Z">
 <meta property="article:author" content="Hudge Chao">
+<meta property="article:tag" content="ROS">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:/Users/huaji/AppData/Roaming/Typora/typora-user-images/image-20220412151628132.png">
   
     <link rel="alternative" href="/atom.xml" title="Hudeg Chao" type="application/atom+xml">
   
@@ -171,97 +183,253 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-ros-introduction" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/31/data-struct-queue/" class="archive-article-date">
-  	<time datetime="2021-03-31T01:42:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-31</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/31/data-struct-queue/">data_struct_queue</a>
+    <h1 class="article-title" itemprop="name">
+      ros_introduction
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2022/04/12/ros-introduction/" class="archive-article-date">
+  	<time datetime="2022-04-12T03:04:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="ROS介绍"><a href="#ROS介绍" class="headerlink" title="ROS介绍"></a>ROS介绍</h2><h3 id="1、什么是ROS？"><a href="#1、什么是ROS？" class="headerlink" title="1、什么是ROS？"></a>1、什么是ROS？</h3><p> <strong>The Robot Operating System (ROS) is a set of software libraries and tools that help you build robot applications. From drivers to state-of-the-art algorithms, and with powerful developer tools, ROS has what you need for your next robotics project. And it’s all open source.</strong></p>
+<p>ROS是完全开源的机器人操作系统，具有一套完整的软件库和工具，使用比较完善的数据报格式和通信方案。由于它的完全开源，在机器人领域中被广泛使用，使用ROS提供的软件库能够实现不同硬件的互相通信，同时，ROS还是一个天然具有分布式特性的操作系统，多台计算机上部署ROS可以通过其中一台指定为MASTER即可实现互联。</p>
+<h3 id="2、ROS的安装"><a href="#2、ROS的安装" class="headerlink" title="2、ROS的安装"></a>2、ROS的安装</h3><p>本文所有的操作都是基于Ubuntu系统，Ubuntu是Linux系统的一版发行商，界面相对友好一点。按照[安装教程](<a target="_blank" rel="noopener" href="http://wiki.ros.org/melodic/Installation/Ubuntu">melodic/Installation/Ubuntu - ROS Wiki</a>)操作。</p>
+<p>首先打开终端，快捷键ctrl+alt+t。</p>
+<h4 id="Setup-your-sources-list"><a href="#Setup-your-sources-list" class="headerlink" title="Setup your sources.list"></a>Setup your sources.list</h4><p>官方源：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo sh -c <span class="string">&#x27;echo &quot;deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main&quot; &gt; /etc/apt/sources.list.d/ros-latest.list&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>USTC源：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo sh -c <span class="string">&#x27;. /etc/lsb-release &amp;&amp; echo &quot;deb http://mirrors.ustc.edu.cn/ros/ubuntu/ `lsb_release -cs` main&quot; &gt; /etc/apt/sources.list.d/ros-latest.list&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>清华源：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo sh -c <span class="string">&#x27;. /etc/lsb-release &amp;&amp; echo &quot;deb http://mirrors.tuna.tsinghua.edu.cn/ros/ubuntu/ `lsb_release -cs` main&quot; &gt; /etc/apt/sources.list.d/ros-latest.list&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="查看需要注册的Key"><a href="#查看需要注册的Key" class="headerlink" title="查看需要注册的Key"></a>查看需要注册的Key</h4><p>在做完上面的操作后，即可进行apt的缓存的更新</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\huaji\AppData\Roaming\Typora\typora-user-images\image-20220412151628132.png" alt="image-20220412151628132"></p>
+<p>上面的提示中有缺少公钥提示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The following signatures couldn<span class="string">&#x27;t be verified because the public key is not available: NO_PUBKEY F42ED6FBAB17C654</span></span><br></pre></td></tr></table></figure>
+
+<p>其中<code>F42ED6FBAB17C654</code>就是我们下一步需要添加的公钥！</p>
+<p>Note：需要自己做一下这个操作，不同版本是不同的。</p>
+<h4 id="Set-up-your-keys"><a href="#Set-up-your-keys" class="headerlink" title="Set up your keys"></a>Set up your keys</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-key adv --keyserver <span class="string">&#x27;hkp://keyserver.ubuntu.com:80&#x27;</span> --recv-key F42ED6FBAB17C654</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\huaji\AppData\Roaming\Typora\typora-user-images\image-20220412152050663.png" alt="image-20220412152050663"></p>
+<p>这样就算导入密钥成功了。</p>
+<h4 id="再次更新APT的缓存"><a href="#再次更新APT的缓存" class="headerlink" title="再次更新APT的缓存"></a>再次更新APT的缓存</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
+
+<p>这一部必须要做，更新APT缓存才能够检索到ROS的包</p>
+<h4 id="正式安装ROS"><a href="#正式安装ROS" class="headerlink" title="正式安装ROS"></a>正式安装ROS</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install ros-melodic-desktop-full</span><br></pre></td></tr></table></figure>
+
+<p>注意：其中melodic是ubuntu18.04系统的ROS的版本号，ubuntu16.04是kinetic， ubuntu20.04是noetic。根据ubuntu版本选择正确的版本号。</p>
+<p>Tips：在输入到ros-的时候，不知道版本号的话，使用Tab键可以提示</p>
+<p><img src="C:\Users\huaji\AppData\Roaming\Typora\typora-user-images\image-20220412152735352.png" alt="image-20220412152735352"></p>
+<p>然后按下回车键，即可显示所有以ros开头的包名</p>
+<p><img src="C:\Users\huaji\AppData\Roaming\Typora\typora-user-images\image-20220412152852721.png" alt="image-20220412152852721"></p>
+<p>可以看到出现了melodic的版本号</p>
+<p>我们不要展示所有的包名，看到合适的就够了。然后使用ctrl+c退出。</p>
+<p>亦或者可以使用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-cache search desktop-full</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\huaji\AppData\Roaming\Typora\typora-user-images\image-20220412153156056.png" alt="image-20220412153156056"></p>
+<p>这样同样能够得到版本号为melodic。</p>
+<p>在执行上述命令安装ros，安装时会提示是否同意安装，输入yes，回车。</p>
+<h4 id="设置系统环境"><a href="#设置系统环境" class="headerlink" title="设置系统环境"></a>设置系统环境</h4><p>这一步类似于在Windows系统中添加环境变量：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;source /opt/ros/melodic/setup.bash&quot;</span> &gt;&gt; ~/.bashrc</span><br><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure>
+
+<p>完成上述命令，即可直接在命令行中输入roscore启动ROS MASTER节点。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">roscore</span><br></pre></td></tr></table></figure>
+
+<h4 id="安装ROS常用的依赖"><a href="#安装ROS常用的依赖" class="headerlink" title="安装ROS常用的依赖"></a>安装ROS常用的依赖</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential</span><br></pre></td></tr></table></figure>
+
+<p><strong>初始化ROSDEP</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rosdep init</span><br></pre></td></tr></table></figure>
+
+<p>这一步可能会失败，因为 网络不稳定，使用VPN或者代理即可解决问题。若没有代理软件，可以使用本地静态安装的方式，网上有很多教程。</p>
+<p><strong>更新ROSDEP</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rosdep update</span><br></pre></td></tr></table></figure>
+
+<p>至此，就完成了ROS的安装。</p>
+<h3 id="3、ROS的简单使用"><a href="#3、ROS的简单使用" class="headerlink" title="3、ROS的简单使用"></a>3、ROS的简单使用</h3><ol>
+<li><p>启动roscore</p>
+<blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">roscore</span><br></pre></td></tr></table></figure></blockquote>
+</li>
+<li><p>启动turtlesim节点</p>
+<blockquote>
+<p>rosrun turtlesim turtlesim_node</p>
+</blockquote>
+</li>
+</ol>
+<p><img src="C:\Users\huaji\AppData\Roaming\Typora\typora-user-images\image-20220412154405399.png" alt="image-20220412154405399"></p>
+<ol start="3">
+<li><p>启动键盘控制节点</p>
+<blockquote>
+<p>rosrun turtlesim turtle_teleop_key</p>
+</blockquote>
+</li>
+</ol>
+<p><img src="C:\Users\huaji\AppData\Roaming\Typora\typora-user-images\image-20220412154508497.png" alt="image-20220412154508497"></p>
+<p>这个使用按↑↓←→键即可实现移动。按q键退出。</p>
+<p><img src="C:\Users\huaji\AppData\Roaming\Typora\typora-user-images\image-20220412154634058.png" alt="image-20220412154634058"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">datastruct</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ROS</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/04/12/ros-introduction/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/14/hello-world/" class="archive-article-date">
-  	<time datetime="2021-03-14T07:07:47.043Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-14</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2021/09/06/linux-cmd-record/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">linux-cmd-record</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/14/hello-world/">Hello World</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Hello</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
+  
+
+  
+
+  
+    <section id="comments" class="comments">
+      <style>
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+      </style>
+      <div id="vcomment" class="comment"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    var notify = 'true' == true ? true : false;
+    var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "gg5Ronuka4riOWgNQiOkeXhI-gzGzoHsz",
+            app_key: "544cqyBcK57V4CUAwc2UhvXI",
+            placeholder: "欢迎畅所欲言！",
+            avatar: "mm"
+        });
+    }
+</script>
+    </section>
     
 
 
@@ -296,8 +464,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
