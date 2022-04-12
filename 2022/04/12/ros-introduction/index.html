@@ -15,20 +15,20 @@
 <meta property="og:site_name" content="Hudeg Chao">
 <meta property="og:description" content="ROS介绍1、什么是ROS？ The Robot Operating System (ROS) is a set of software libraries and tools that help you build robot applications. From drivers to state-of-the-art algorithms, and with powerful develope">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2022/04/12/ros-introduction/%5Cimages%5CROS%5Cimage-20220412151628132.png">
-<meta property="og:image" content="http://example.com/2022/04/12/ros-introduction/%5Cimages%5CROS%5Cimage-20220412152050663.png">
-<meta property="og:image" content="http://example.com/2022/04/12/ros-introduction/%5Cimages%5CROS%5Cimage-20220412152735352.png">
-<meta property="og:image" content="http://example.com/2022/04/12/ros-introduction/%5Cimages%5CROS%5Cimage-20220412152852721.png">
-<meta property="og:image" content="http://example.com/2022/04/12/ros-introduction/%5Cimages%5CROS%5Cimage-20220412153156056.png">
-<meta property="og:image" content="http://example.com/2022/04/12/ros-introduction/%5Cimages%5CROS%5Cimage-20220412154405399.png">
-<meta property="og:image" content="http://example.com/2022/04/12/ros-introduction/%5Cimages%5CROS%5Cimage-20220412154508497.png">
-<meta property="og:image" content="http://example.com/2022/04/12/ros-introduction/%5Cimages%5CROS%5Cimage-20220412154634058.png">
+<meta property="og:image" content="http://example.com/2022/04/12/ros-introduction/%5Cimages%5Cimage-20220412151628132.png">
+<meta property="og:image" content="http://example.com/2022/04/12/ros-introduction/%5Cimages%5Cimage-20220412152050663.png">
+<meta property="og:image" content="http://example.com/2022/04/12/ros-introduction/%5Cimages%5Cimage-20220412152735352.png">
+<meta property="og:image" content="http://example.com/2022/04/12/ros-introduction/%5Cimages%5Cimage-20220412152852721.png">
+<meta property="og:image" content="http://example.com/2022/04/12/ros-introduction/%5Cimages%5Cimage-20220412153156056.png">
+<meta property="og:image" content="http://example.com/2022/04/12/ros-introduction/%5Cimages%5Cimage-20220412154405399.png">
+<meta property="og:image" content="http://example.com/2022/04/12/ros-introduction/%5Cimages%5Cimage-20220412154508497.png">
+<meta property="og:image" content="http://example.com/2022/04/12/ros-introduction/%5Cimages%5Cimage-20220412154634058.png">
 <meta property="article:published_time" content="2022-04-12T03:04:00.000Z">
-<meta property="article:modified_time" content="2022-04-12T08:15:11.212Z">
+<meta property="article:modified_time" content="2022-04-12T09:21:44.165Z">
 <meta property="article:author" content="Hudge Chao">
 <meta property="article:tag" content="ROS">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2022/04/12/ros-introduction/%5Cimages%5CROS%5Cimage-20220412151628132.png">
+<meta name="twitter:image" content="http://example.com/2022/04/12/ros-introduction/%5Cimages%5Cimage-20220412151628132.png">
   
     <link rel="alternative" href="/atom.xml" title="Hudeg Chao" type="application/atom+xml">
   
@@ -221,7 +221,7 @@
 <h4 id="查看需要注册的Key"><a href="#查看需要注册的Key" class="headerlink" title="查看需要注册的Key"></a>查看需要注册的Key</h4><p>在做完上面的操作后，即可进行apt的缓存的更新</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
 
-<p><img src="%5Cimages%5CROS%5Cimage-20220412151628132.png" alt="image-20220412151628132"></p>
+<p><img src="%5Cimages%5Cimage-20220412151628132.png" alt="image-20220412151628132"></p>
 <p>上面的提示中有缺少公钥提示：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The following signatures couldn<span class="string">&#x27;t be verified because the public key is not available: NO_PUBKEY F42ED6FBAB17C654</span></span><br></pre></td></tr></table></figure>
 
@@ -229,7 +229,7 @@
 <p>Note：需要自己做一下这个操作，不同版本是不同的。</p>
 <h4 id="Set-up-your-keys"><a href="#Set-up-your-keys" class="headerlink" title="Set up your keys"></a>Set up your keys</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-key adv --keyserver <span class="string">&#x27;hkp://keyserver.ubuntu.com:80&#x27;</span> --recv-key F42ED6FBAB17C654</span><br></pre></td></tr></table></figure>
 
-<p><img src="%5Cimages%5CROS%5Cimage-20220412152050663.png" alt="image-20220412152050663"></p>
+<p><img src="%5Cimages%5Cimage-20220412152050663.png" alt="image-20220412152050663"></p>
 <p>这样就算导入密钥成功了。</p>
 <h4 id="再次更新APT的缓存"><a href="#再次更新APT的缓存" class="headerlink" title="再次更新APT的缓存"></a>再次更新APT的缓存</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
 
@@ -238,15 +238,15 @@
 
 <p>注意：其中melodic是ubuntu18.04系统的ROS的版本号，ubuntu16.04是kinetic， ubuntu20.04是noetic。根据ubuntu版本选择正确的版本号。</p>
 <p>Tips：在输入到ros-的时候，不知道版本号的话，使用Tab键可以提示</p>
-<p><img src="%5Cimages%5CROS%5Cimage-20220412152735352.png" alt="image-20220412152735352"></p>
+<p><img src="%5Cimages%5Cimage-20220412152735352.png" alt="image-20220412152735352"></p>
 <p>然后按下回车键，即可显示所有以ros开头的包名</p>
-<p><img src="%5Cimages%5CROS%5Cimage-20220412152852721.png" alt="image-20220412152852721"></p>
+<p><img src="%5Cimages%5Cimage-20220412152852721.png" alt="image-20220412152852721"></p>
 <p>可以看到出现了melodic的版本号</p>
 <p>我们不要展示所有的包名，看到合适的就够了。然后使用ctrl+c退出。</p>
 <p>亦或者可以使用</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-cache search desktop-full</span><br></pre></td></tr></table></figure>
 
-<p><img src="%5Cimages%5CROS%5Cimage-20220412153156056.png" alt="image-20220412153156056"></p>
+<p><img src="%5Cimages%5Cimage-20220412153156056.png" alt="image-20220412153156056"></p>
 <p>这样同样能够得到版本号为melodic。</p>
 <p>在执行上述命令安装ros，安装时会提示是否同意安装，输入yes，回车。</p>
 <h4 id="设置系统环境"><a href="#设置系统环境" class="headerlink" title="设置系统环境"></a>设置系统环境</h4><p>这一步类似于在Windows系统中添加环境变量：</p>
@@ -276,7 +276,7 @@
 </blockquote>
 </li>
 </ol>
-<p><img src="%5Cimages%5CROS%5Cimage-20220412154405399.png" alt="image-20220412154405399"></p>
+<p><img src="%5Cimages%5Cimage-20220412154405399.png" alt="image-20220412154405399"></p>
 <ol start="3">
 <li><p>启动键盘控制节点</p>
 <blockquote>
@@ -284,9 +284,9 @@
 </blockquote>
 </li>
 </ol>
-<p><img src="%5Cimages%5CROS%5Cimage-20220412154508497.png" alt="image-20220412154508497"></p>
+<p><img src="%5Cimages%5Cimage-20220412154508497.png" alt="image-20220412154508497"></p>
 <p>这个使用按↑↓←→键即可实现移动。按q键退出。</p>
-<p><img src="%5Cimages%5CROS%5Cimage-20220412154634058.png" alt="image-20220412154634058"></p>
+<p><img src="%5Cimages%5Cimage-20220412154634058.png" alt="image-20220412154634058"></p>
 
       
 
@@ -536,15 +536,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ROS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">datastruct</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color4">ROS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -553,6 +549,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">C++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
             
             <div class="clearfix"></div>
