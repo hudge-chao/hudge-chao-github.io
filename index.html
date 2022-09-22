@@ -6,7 +6,7 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Hudeg Chao</title>
+  <title>Hudge Chao</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="思考与分享 只因为热爱">
 <meta property="og:type" content="website">
@@ -173,6 +173,85 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-GitUse" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/09/02/GitUse/">GitUse</a>
+    </h1>
+  
+
+        
+        <a href="/2022/09/02/GitUse/" class="archive-article-date">
+  	<time datetime="2022-09-02T03:01:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Git的使用方法"><a href="#Git的使用方法" class="headerlink" title="Git的使用方法"></a>Git的使用方法</h2><h3 id="一、Git是什么？"><a href="#一、Git是什么？" class="headerlink" title="一、Git是什么？"></a>一、Git是什么？</h3><p>Git是目前世界上最先进的分布式版本控制系统。</p>
+<p>工作原理 / 流程：</p>
+<p><img src="https://pic2.zhimg.com/80/v2-3bc9d5f2c49a713c776e69676d7d56c5_720w.jpg" alt="img"></p>
+<p><strong>Workspace：工作区</strong><br><strong>Index / Stage：暂存区</strong><br><strong>Repository：仓库区（或本地仓库）</strong><br><strong>Remote：远程仓库</strong></p>
+        
+          <a class="article-more-a" href="/2022/09/02/GitUse/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Tips</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/09/02/GitUse/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-ros-introduction" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -195,87 +274,9 @@
       
         <h2 id="ROS介绍"><a href="#ROS介绍" class="headerlink" title="ROS介绍"></a>ROS介绍</h2><h3 id="1、什么是ROS？"><a href="#1、什么是ROS？" class="headerlink" title="1、什么是ROS？"></a>1、什么是ROS？</h3><p> <strong>The Robot Operating System (ROS) is a set of software libraries and tools that help you build robot applications. From drivers to state-of-the-art algorithms, and with powerful developer tools, ROS has what you need for your next robotics project. And it’s all open source.</strong></p>
 <p>ROS是完全开源的机器人操作系统，具有一套完整的软件库和工具，使用比较完善的数据报格式和通信方案。由于它的完全开源，在机器人领域中被广泛使用，使用ROS提供的软件库能够实现不同硬件的互相通信，同时，ROS还是一个天然具有分布式特性的操作系统，多台计算机上部署ROS可以通过其中一台指定为MASTER即可实现互联。</p>
-<h3 id="2、ROS的安装"><a href="#2、ROS的安装" class="headerlink" title="2、ROS的安装"></a>2、ROS的安装</h3><p>本文所有的操作都是基于Ubuntu系统，Ubuntu是Linux系统的一版发行商，界面相对友好一点。按照[安装教程](<a target="_blank" rel="noopener" href="http://wiki.ros.org/melodic/Installation/Ubuntu">melodic/Installation/Ubuntu - ROS Wiki</a>)操作。</p>
-<p>首先打开终端，快捷键ctrl+alt+t。</p>
-<h4 id="Setup-your-sources-list"><a href="#Setup-your-sources-list" class="headerlink" title="Setup your sources.list"></a>Setup your sources.list</h4><p>官方源：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo sh -c <span class="string">&#x27;echo &quot;deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main&quot; &gt; /etc/apt/sources.list.d/ros-latest.list&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p>USTC源：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo sh -c <span class="string">&#x27;. /etc/lsb-release &amp;&amp; echo &quot;deb http://mirrors.ustc.edu.cn/ros/ubuntu/ `lsb_release -cs` main&quot; &gt; /etc/apt/sources.list.d/ros-latest.list&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p>清华源：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo sh -c <span class="string">&#x27;. /etc/lsb-release &amp;&amp; echo &quot;deb http://mirrors.tuna.tsinghua.edu.cn/ros/ubuntu/ `lsb_release -cs` main&quot; &gt; /etc/apt/sources.list.d/ros-latest.list&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="查看需要注册的Key"><a href="#查看需要注册的Key" class="headerlink" title="查看需要注册的Key"></a>查看需要注册的Key</h4><p>在做完上面的操作后，即可进行apt的缓存的更新</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
-
-<p><img src="%5Cimages%5Cimage-20220412151628132.png" alt="image-20220412151628132"></p>
-<p>上面的提示中有缺少公钥提示：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The following signatures couldn<span class="string">&#x27;t be verified because the public key is not available: NO_PUBKEY F42ED6FBAB17C654</span></span><br></pre></td></tr></table></figure>
-
-<p>其中<code>F42ED6FBAB17C654</code>就是我们下一步需要添加的公钥！</p>
-<p>Note：需要自己做一下这个操作，不同版本是不同的。</p>
-<h4 id="Set-up-your-keys"><a href="#Set-up-your-keys" class="headerlink" title="Set up your keys"></a>Set up your keys</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-key adv --keyserver <span class="string">&#x27;hkp://keyserver.ubuntu.com:80&#x27;</span> --recv-key F42ED6FBAB17C654</span><br></pre></td></tr></table></figure>
-
-<p><img src="%5Cimages%5Cimage-20220412152050663.png" alt="image-20220412152050663"></p>
-<p>这样就算导入密钥成功了。</p>
-<h4 id="再次更新APT的缓存"><a href="#再次更新APT的缓存" class="headerlink" title="再次更新APT的缓存"></a>再次更新APT的缓存</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
-
-<p>这一部必须要做，更新APT缓存才能够检索到ROS的包</p>
-<h4 id="正式安装ROS"><a href="#正式安装ROS" class="headerlink" title="正式安装ROS"></a>正式安装ROS</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install ros-melodic-desktop-full</span><br></pre></td></tr></table></figure>
-
-<p>注意：其中melodic是ubuntu18.04系统的ROS的版本号，ubuntu16.04是kinetic， ubuntu20.04是noetic。根据ubuntu版本选择正确的版本号。</p>
-<p>Tips：在输入到ros-的时候，不知道版本号的话，使用Tab键可以提示</p>
-<p><img src="%5Cimages%5Cimage-20220412152735352.png" alt="image-20220412152735352"></p>
-<p>然后按下回车键，即可显示所有以ros开头的包名</p>
-<p><img src="%5Cimages%5Cimage-20220412152852721.png" alt="image-20220412152852721"></p>
-<p>可以看到出现了melodic的版本号</p>
-<p>我们不要展示所有的包名，看到合适的就够了。然后使用ctrl+c退出。</p>
-<p>亦或者可以使用</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-cache search desktop-full</span><br></pre></td></tr></table></figure>
-
-<p><img src="%5Cimages%5Cimage-20220412153156056.png" alt="image-20220412153156056"></p>
-<p>这样同样能够得到版本号为melodic。</p>
-<p>在执行上述命令安装ros，安装时会提示是否同意安装，输入yes，回车。</p>
-<h4 id="设置系统环境"><a href="#设置系统环境" class="headerlink" title="设置系统环境"></a>设置系统环境</h4><p>这一步类似于在Windows系统中添加环境变量：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;source /opt/ros/melodic/setup.bash&quot;</span> &gt;&gt; ~/.bashrc</span><br><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure>
-
-<p>完成上述命令，即可直接在命令行中输入roscore启动ROS MASTER节点。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">roscore</span><br></pre></td></tr></table></figure>
-
-<h4 id="安装ROS常用的依赖"><a href="#安装ROS常用的依赖" class="headerlink" title="安装ROS常用的依赖"></a>安装ROS常用的依赖</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential</span><br></pre></td></tr></table></figure>
-
-<p><strong>初始化ROSDEP</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rosdep init</span><br></pre></td></tr></table></figure>
-
-<p>这一步可能会失败，因为 网络不稳定，使用VPN或者代理即可解决问题。若没有代理软件，可以使用本地静态安装的方式，网上有很多教程。</p>
-<p><strong>更新ROSDEP</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rosdep update</span><br></pre></td></tr></table></figure>
-
-<p>至此，就完成了ROS的安装。</p>
-<h3 id="3、ROS的简单使用"><a href="#3、ROS的简单使用" class="headerlink" title="3、ROS的简单使用"></a>3、ROS的简单使用</h3><ol>
-<li><p>启动roscore</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">roscore</span><br></pre></td></tr></table></figure></blockquote>
-</li>
-<li><p>启动turtlesim节点</p>
-<blockquote>
-<p>rosrun turtlesim turtlesim_node</p>
-</blockquote>
-</li>
-</ol>
-<p><img src="%5Cimages%5Cimage-20220412154405399.png" alt="image-20220412154405399"></p>
-<ol start="3">
-<li><p>启动键盘控制节点</p>
-<blockquote>
-<p>rosrun turtlesim turtle_teleop_key</p>
-</blockquote>
-</li>
-</ol>
-<p><img src="%5Cimages%5Cimage-20220412154508497.png" alt="image-20220412154508497"></p>
-<p>这个使用按↑↓←→键即可实现移动。按q键退出。</p>
-<p><img src="%5Cimages%5Cimage-20220412154634058.png" alt="image-20220412154634058"></p>
-
+        
+          <a class="article-more-a" href="/2022/04/12/ros-introduction/#more">more >></a>
+        
       
 
       
@@ -348,10 +349,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Linux很有效的命令"><a href="#Linux很有效的命令" class="headerlink" title="Linux很有效的命令"></a>Linux很有效的命令</h2><h3 id="1-man"><a href="#1-man" class="headerlink" title="1. man"></a>1. man</h3><p><img src="https://images2017.cnblogs.com/blog/841693/201801/841693-20180125171948412-1280461527.png" alt="img"></p>
+        <h2 id="Linux很有效的命令"><a href="#Linux很有效的命令" class="headerlink" title="Linux很有效的命令"></a>Linux很有效的命令</h2><h3 id="1-man"><a href="#1-man" class="headerlink" title="1. man"></a>1. man</h3><p><a target="_blank" rel="noopener" href="https://imgse.com/i/xFL0KJ"><img src="https://s1.ax1x.com/2022/09/22/xFL0KJ.png" alt="xFL0KJ.png"></a></p>
 <p>Linux提供了丰富的帮助手册，当你需要查看某个命令的参数时不必到处上网查找，只要man一下即可。同时也可以使用man man 查看man的使用方法。</p>
-<p>原文链接：<a target="_blank" rel="noopener" href="http://www.linuxidc.com/Linux/2017-03/142407.htm">http://www.linuxidc.com/Linux/2017-03/142407.htm</a></p>
-
+        
+          <a class="article-more-a" href="/2021/09/06/linux-cmd-record/#more">more >></a>
+        
       
 
       
@@ -799,7 +801,7 @@
       
         <p><em>这是我第一次建站，本打算使用<code>SSM</code>来建立自己的个人博客，但是苦于找不到好看的个人博客框架，在百度上搜到稚晖君的个人博客，觉得很符合我的审美，然后寻找框架，但是失败了，然后在其知乎上看到他使用了<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">Hexo</a>来实现静态页面blog。然后我用<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">hexo</a>来快速搭建我的blog。以后我还会继续使用<code>SSM</code>搭建我的个人博客，实现动态管理我的博客！</em></p>
 <p><strong>这是我的个人博客。以后我所有的项目都会在这里发布和分享。如果对我的项目中存在疑问，欢迎联系我。</strong></p>
-<p>QQ：<code>987937104</code>,邮箱：<a href="mailto:&#104;&#117;&#97;&#x6a;&#x69;&#101;&#x7a;&#64;&#x6f;&#117;&#x74;&#108;&#x6f;&#x6f;&#x6b;&#x2e;&#99;&#x6f;&#109;">&#104;&#117;&#97;&#x6a;&#x69;&#101;&#x7a;&#64;&#x6f;&#117;&#x74;&#108;&#x6f;&#x6f;&#x6b;&#x2e;&#99;&#x6f;&#109;</a></p>
+<p>QQ：<code>987937104</code>,邮箱：<a href="mailto:&#104;&#117;&#x61;&#x6a;&#x69;&#101;&#x7a;&#x40;&#111;&#x75;&#116;&#108;&#x6f;&#111;&#x6b;&#x2e;&#99;&#111;&#109;">&#104;&#117;&#x61;&#x6a;&#x69;&#101;&#x7a;&#x40;&#111;&#x75;&#116;&#108;&#x6f;&#111;&#x6b;&#x2e;&#99;&#111;&#109;</a></p>
 
       
 
@@ -975,6 +977,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Tips</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
@@ -1098,5 +1104,5 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 
 </div>
   </div>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</body>
 </html>
