@@ -173,6 +173,84 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ros-transform-tutorials" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/10/09/ros-transform-tutorials/">ros-transform-tutorials</a>
+    </h1>
+  
+
+        
+        <a href="/2022/10/09/ros-transform-tutorials/" class="archive-article-date">
+  	<time datetime="2022-10-09T13:32:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="ROS中Transform的使用笔记"><a href="#ROS中Transform的使用笔记" class="headerlink" title="ROS中Transform的使用笔记"></a>ROS中Transform的使用笔记</h2><h3 id="1、需求"><a href="#1、需求" class="headerlink" title="1、需求"></a>1、需求</h3><p>在使用ROS的过程中，我们常常需要在应用中获取某个或者整体的tf树，或者发布某个frame与某个节点之间的transform关系。</p>
+<h3 id="2、发布transforms"><a href="#2、发布transforms" class="headerlink" title="2、发布transforms"></a>2、发布transforms</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 引入头文件</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;tf/transform_broadcaster.h&gt;</span></span></span><br><span class="line"><span class="comment">// 2. 创建TransformBroadcaster对象</span></span><br><span class="line">tf::TransformBroadcaster br;</span><br><span class="line"><span class="comment">// 3. 创建Transform对象</span></span><br><span class="line">tf::Transform transform;</span><br><span class="line"><span class="comment">// 4. 给tranform填入目标值</span></span><br><span class="line">transform.setOrigin(tf::Vector3(x, y, <span class="number">0.0</span>));</span><br><span class="line">tf::Quaternion q;</span><br><span class="line">q.setRPY(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">transform.setRotation(q);</span><br><span class="line"><span class="comment">// 5. 将Transform填充到StampedTransform对象中，并使用Broadcaster发布StampedTransform话题，</span></span><br><span class="line">br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), <span class="string">&quot;/parent_id&quot;</span>, <span class="string">&quot;/child_id&quot;</span>));</span><br></pre></td></tr></table></figure>
+
+<h3 id="3、获取transform"><a href="#3、获取transform" class="headerlink" title="3、获取transform"></a>3、获取transform</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 引入listener头文件</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;tf/transform_listener.h&gt;</span></span></span><br><span class="line"><span class="comment">// 2. 创建listener对象</span></span><br><span class="line">tf::TransformListener listener;</span><br><span class="line"><span class="comment">// 3. 创建StampedTransform对象</span></span><br><span class="line">tf::StampedTransform transform;</span><br><span class="line"><span class="comment">// 4. 尝试获取指定的transform， 如果获取失败会返回TransformException</span></span><br><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    listener.lookupTransform(<span class="string">&quot;/parent_id&quot;</span>, <span class="string">&quot;/child_id&quot;</span>,  </span><br><span class="line">                            ros::Time(<span class="number">0</span>), transform);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span> (tf::TransformException ex)&#123;</span><br><span class="line">    ROS_ERROR(<span class="string">&quot;%s&quot;</span>,ex.what());</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// getOrigin() 获取transition</span></span><br><span class="line">transform.getOrigin()</span><br><span class="line"><span class="comment">// getRotation() 获取orientation</span></span><br><span class="line">transform.getRotation()</span><br></pre></td></tr></table></figure>
+<h3 id="4、编译设置"><a href="#4、编译设置" class="headerlink" title="4、编译设置"></a>4、编译设置</h3><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_executable</span>(turtle_tf_listener src/turtle_tf_listener.cpp)</span><br><span class="line"><span class="keyword">target_link_libraries</span>(turtle_tf_listener <span class="variable">$&#123;catkin_LIBRARIES&#125;</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="5、编译"><a href="#5、编译" class="headerlink" title="5、编译"></a>5、编译</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">catkin_make</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ROS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/10/09/ros-transform-tutorials/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-GitUse" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -377,6 +455,82 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/09/06/linux-cmd-record/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/09/06/hello-world/">Hello World</a>
+    </h1>
+  
+
+        
+        <a href="/2021/09/06/hello-world/" class="archive-article-date">
+  	<time datetime="2021-09-06T07:30:29.843Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><em>这是我第一次建站，本打算使用<code>SSM</code>来建立自己的个人博客，但是苦于找不到好看的个人博客框架，在百度上搜到稚晖君的个人博客，觉得很符合我的审美，然后寻找框架，但是失败了，然后在其知乎上看到他使用了<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">Hexo</a>来实现静态页面blog。然后我用<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">hexo</a>来快速搭建我的blog。以后我还会继续使用<code>SSM</code>搭建我的个人博客，实现动态管理我的博客！</em></p>
+<p><strong>这是我的个人博客。以后我所有的项目都会在这里发布和分享。如果对我的项目中存在疑问，欢迎联系我。</strong></p>
+<p>QQ：<code>987937104</code>,邮箱：<a href="mailto:&#104;&#117;&#x61;&#106;&#105;&#x65;&#122;&#64;&#x6f;&#x75;&#x74;&#108;&#x6f;&#x6f;&#x6b;&#x2e;&#x63;&#111;&#109;">&#104;&#117;&#x61;&#106;&#105;&#x65;&#122;&#64;&#x6f;&#x75;&#x74;&#108;&#x6f;&#x6f;&#x6b;&#x2e;&#x63;&#111;&#109;</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Hello</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/09/06/hello-world/">展开全文 >></a>
         </p>
       
 
@@ -779,82 +933,6 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/14/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2021/03/14/hello-world/" class="archive-article-date">
-  	<time datetime="2021-03-14T07:07:47.043Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><em>这是我第一次建站，本打算使用<code>SSM</code>来建立自己的个人博客，但是苦于找不到好看的个人博客框架，在百度上搜到稚晖君的个人博客，觉得很符合我的审美，然后寻找框架，但是失败了，然后在其知乎上看到他使用了<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">Hexo</a>来实现静态页面blog。然后我用<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">hexo</a>来快速搭建我的blog。以后我还会继续使用<code>SSM</code>搭建我的个人博客，实现动态管理我的博客！</em></p>
-<p><strong>这是我的个人博客。以后我所有的项目都会在这里发布和分享。如果对我的项目中存在疑问，欢迎联系我。</strong></p>
-<p>QQ：<code>987937104</code>,邮箱：<a href="mailto:&#104;&#117;&#97;&#x6a;&#105;&#x65;&#x7a;&#64;&#x6f;&#x75;&#x74;&#x6c;&#111;&#111;&#107;&#46;&#x63;&#x6f;&#109;">&#104;&#117;&#97;&#x6a;&#105;&#x65;&#x7a;&#64;&#x6f;&#x75;&#x74;&#x6c;&#111;&#111;&#107;&#46;&#x63;&#x6f;&#109;</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Hello</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/14/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
 
 
@@ -955,15 +1033,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">datastruct</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Hello</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color4">ROS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ROS</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -972,10 +1054,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">C++</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">datastruct</a>
               </li>
             
             <div class="clearfix"></div>
