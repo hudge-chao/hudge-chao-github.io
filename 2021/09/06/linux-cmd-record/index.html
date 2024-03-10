@@ -17,7 +17,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s1.ax1x.com/2022/09/22/xFL0KJ.png">
 <meta property="article:published_time" content="2021-09-06T07:43:57.000Z">
-<meta property="article:modified_time" content="2024-03-10T08:49:38.139Z">
+<meta property="article:modified_time" content="2024-03-10T09:27:22.621Z">
 <meta property="article:author" content="Hudge Chao">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
@@ -234,7 +234,15 @@
 <p>apt-file search -x(–regexp) 后可接正则表达式，如：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-file search -x ‘bin/rzKaTeX parse error: Expected <span class="string">&#x27;EOF&#x27;</span>, got <span class="string">&#x27;#&#x27;</span> at position 36: … root@deepin ~ <span class="comment">#̲ apt-file searc…’</span></span><br></pre></td></tr></table></figure>
 
+<h3 id="3-dos2unix"><a href="#3-dos2unix" class="headerlink" title="3. dos2unix"></a>3. dos2unix</h3><p>dos2unix是一个基于命令行的文件格式转换工具，用于将windows下的文件转换为unix下的文件格式，有时候文件在windows上打开过后，再在linux/macos系统上运行时，就会出现异常情况，可以使用这个工具解决。</p>
+<p>根据文件后缀类型进行修改</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dos2unix *.sh</span><br></pre></td></tr></table></figure>
 
+<p>对文件夹进行递归地修改,亲测有效</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -<span class="built_in">type</span> f -print0 | xargs -0 dos2unix</span><br></pre></td></tr></table></figure>
+
+<p>根据文件名修改</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dos2unix a.txt</span><br></pre></td></tr></table></figure>
 
 
       
@@ -515,6 +523,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
             
             <div class="clearfix"></div>
